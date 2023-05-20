@@ -41,4 +41,12 @@ public class ProdutoServico {
             }
         }
     }
+
+    //Método para remover produtos
+    public ResponseEntity<RespostaModelo> deletar(Long id){
+        pr.deleteById(id);
+        rm.setMensagem("O Produto Foi Removido com Sucesso!");
+
+        return new ResponseEntity<RespostaModelo>(rm, HttpStatus.OK);
+    }
 }
